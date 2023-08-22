@@ -1,0 +1,12 @@
+version: 1.0
+
+input:
+  - hello_string
+
+tasks:
+  hello_task:
+    action: core.echo
+    input:
+      message: |
+        Testing first ST2 workflow: "{{ ctx().hello_string }}"
+

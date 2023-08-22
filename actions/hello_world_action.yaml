@@ -1,0 +1,12 @@
+---
+name: hello_world_action
+description: Hello world action testing
+runner_type: orquesta
+entry_point: workflows/hello-world-action.yaml
+enabled: true
+parameters:
+  hello_string:
+    required: true
+    description: "Hello world workflow string value"
+    default: "{{ config_context.phrase_of_day}}"
+    type: string
