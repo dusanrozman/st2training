@@ -10,3 +10,7 @@ parameters:
     description: "Hello world workflow string value"
     default: "{{ config_context.phrase_of_day}}"
     type: string
+  json_data:
+    required: true
+    description: "st2training payload"
+    type: object
