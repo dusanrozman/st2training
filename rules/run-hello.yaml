@@ -10,10 +10,9 @@ trigger:
     url: "st2training"
 
 criteria:
-  trigger.body.policyId:
-    type: inside
-    pattern: 
-      - "251"
+  trigger.body.groupName:
+    type: equals
+    pattern: "vDU-FSU"
     
 
 action:
