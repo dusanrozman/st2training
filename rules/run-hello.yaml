@@ -11,8 +11,10 @@ trigger:
 
 criteria:
   trigger.body.policyId:
-    type: "equals"
-    pattern: "251"
+    type: inside
+    pattern: 
+      - "251"
+    
 
 action:
   ref: st2training.hello_world_action
