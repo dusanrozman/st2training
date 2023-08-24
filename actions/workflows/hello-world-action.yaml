@@ -10,5 +10,5 @@ tasks:
     input:
       message: |
         Testing first ST2 workflow: "{{ ctx().hello_string }}"
-#        json payload message: "{{ ctx().json_data.message }}"
+        json payload message: "{{ ctx().json_data.message }}"
 

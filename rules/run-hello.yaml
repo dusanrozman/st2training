@@ -18,4 +18,6 @@ criteria:
 action:
   ref: st2training.hello_world_action
   description: "Hello world Action"
+  parameters:
+    json_data: "{{ trigger.body }}"
 
