@@ -8,7 +8,14 @@ tasks:
   hello_task:
     action: core.echo
     input:
-      message: |
-        Testing first ST2 workflow: "{{ ctx().hello_string }}"
+     message: |
+        The JSON payload is: 
+            policy ID: {{ ctx().json_data.policyId }}
+            group name: {{ ctx().json_data.groupName }}
+            alert ID: {{ ctx().json_data.alertId }}
+            JSON payload AS IS: {{ ctx().json_data }}
+
+#      message: |
+#        Testing first ST2 workflow: "{{ ctx().hello_string }}"
 #        json payload message: "{{ ctx().json_data.message }}"
 
