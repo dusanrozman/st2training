@@ -1,0 +1,23 @@
+---
+name: run-hello
+description: "Rule to run hello world"
+enabled: true
+
+trigger:
+  description: "Triggers on specified intervals. e.g. every 30s, 1week etc."
+  type: core.st2.webhook
+  parameters:
+    url: "st2training"
+
+criteria:
+  trigger.body.deviceName:
+    type: equals
+    pattern: "TEST_29991503555_5GDU_ME_LAB_6_WLL"
+    
+
+action:
+  ref: st2training.hello_world_action
+  description: "Hello world Action"
+  parameters:
+    json_data: "{{ trigger.body }}"
+
