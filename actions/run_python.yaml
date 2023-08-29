@@ -1,0 +1,23 @@
+---
+name: run_python
+description: Hello world action testing
+runner_type: "python-script"
+entry_point: "hello_world_action_python.py"
+enabled: true
+parameters:
+  message:
+    type: "string"
+    description: "Message to print."
+    required: true
+    default: "testing python script"
+#    position: 0
+#  hello_string:
+#    required: true
+#    description: "Hello world workflow string value"
+#    default: "{{ config_context.phrase_of_day}}"
+#    type: string
+#  json_data:
+#    required: true
+#    description: "st2training payload"
+#    type: object
+#
