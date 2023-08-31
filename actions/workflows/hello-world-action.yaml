@@ -4,6 +4,12 @@ input:
   - hello_string
   - json_data
 
+vars:
+  - greeting: null
+
+output:
+  - greeting: <% ctx().greeting %>1
+
 tasks:
   hello_task:
     action: core.echo
@@ -15,6 +21,27 @@ tasks:
             alert ID: {{ ctx().json_data.alertId }}
             JSON payload AS IS: {{ ctx().json_data }}
 
+  task1:
+    action: core.echo message=<% ctx().hello_string %>
+    next:
+      - when: <% succeeded() %>
+        publish: greeting=<% result().stdout %>
+        do: task2
+  task2:
+    action: core.echo
+    input:
+      message: "All your base are belong to us!"
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - greeting: <% ctx("greeting") %>, <% result().stdout %>
+        do:
+          - task3
+  task3:
+    action: core.echo message=<% ctx('greeting') %>
+    next:
+      - when: <% succeeded() %>
+        publish: greeting=<% result().stdout %>
 #      message: |
 #        Testing first ST2 workflow: "{{ ctx().hello_string }}"
 #        json payload message: "{{ ctx().json_data.message }}"
