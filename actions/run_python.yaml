@@ -2,7 +2,7 @@
 name: run_python
 description: Hello world action testing
 runner_type: "python-script"
-entry_point: "hello_world_action_python.py"
+entry_point: "run_python.py"
 enabled: true
 parameters:
   message:
