@@ -1,6 +1,6 @@
 ---
 name: run_python
-description: Hello world action testing
+description: Hello world action testing-2
 runner_type: "python-script"
 entry_point: "run_python.py"
 enabled: true
