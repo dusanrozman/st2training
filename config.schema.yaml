@@ -1,5 +1,5 @@
 ---
   phrase_of_day:
-    description: "Hello World Phrase"
+    description: "Hello World Phrase - rozman"
     type: "string"
     default: "Hello World!"
