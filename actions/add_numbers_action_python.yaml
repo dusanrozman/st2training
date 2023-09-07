@@ -15,12 +15,3 @@ parameters:
     description: "The second number to add."
     required: true
     position: 1
-output_schema:
-  type: object
-  properties:
-    completed:
-      type: boolean
-    value:
-      required: true
-      type: integer
-  additionalProperties: false
