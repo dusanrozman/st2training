@@ -1,5 +1,9 @@
 ---
-  phrase_of_day:
-    description: "Hello World Phrase - rozman"
+  test_string:
+    description: "some test string"
     type: "string"
-    default: "Hello World!"
+    default: "This is my test string"
+  test_int:
+    description: "some test int"
+    type: "integer"
+    default: 123
