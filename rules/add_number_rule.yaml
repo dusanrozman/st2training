@@ -12,6 +12,6 @@ criteria:
 action:
     ref: "amdocs_st2_training.add_numbers_action_python"
     parameters:
-    num1: "{{ trigger.body.num1 }}"
-    num2: "{{ trigger.body.num2 }}"
+      num1: "{{ trigger.body.num1 }}"
+      num2: "{{ trigger.body.num2 }}"
 
