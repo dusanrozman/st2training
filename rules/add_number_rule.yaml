@@ -1,4 +1,9 @@
 ---
+name: "add_numbers_rule"                      # required
+pack: "amdocs_st2_training"                       # optional
+description: "Rule description."       # optional
+enabled: true
+
 trigger:
         type: "core.st2.webhook"
         parameters:
