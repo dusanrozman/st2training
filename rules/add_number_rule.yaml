@@ -1,23 +1,17 @@
 ---
-name: run-hello
-description: "Rule to run hello world"
-enabled: true
-
 trigger:
-  description: "Triggers on specified intervals. e.g. every 30s, 1week etc."
-  type: core.st2.webhook
-  parameters:
-    url: "rozman"
+        type: "core.st2.webhook"
+        parameters:
+            url: "rozman"
 
 criteria:
-  trigger.body.action:
-    type: equals
-    pattern: "add"
-    
+    trigger.body.action:
+        type: "equals"
+        pattern: "add"
 
 action:
-  ref: amdocs_st2_training.add_numbers_action_python
-  description: "Action for adding numbers "
-  parameters:
-    json_data: "{{ trigger.body }}"
+    ref: "amdocs_st2_training.add_numbers_action_python"
+    parameters:
+      - num1: "{{ trigger.body.num1 }}"
+      - num2: "{{ trigger.body.num2 }}"
 
