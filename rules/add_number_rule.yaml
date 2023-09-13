@@ -1,5 +1,5 @@
 ---
-name: "add_numbers_rule"                      # required
+name: "add_numbers_webhook_rule"                      # required
 pack: "amdocs_st2_training"                       # optional
 description: "Rule description."       # optional
 enabled: true
@@ -19,4 +19,22 @@ action:
     parameters:
       num1: "{{ trigger.body.num1 }}"
       num2: "{{ trigger.body.num2 }}"
+
+---
+name: "add_numbers_timer_rule"                      # required
+pack: "amdocs_st2_training"                       # optional
+description: "Rule description."       # optional
+enabled: true
+
+trigger:
+  type: "core.st2.IntervalTimer"
+  parameters:
+      unit: "seconds"
+      delta: 10
+
+action:
+    ref: "amdocs_st2_training.add_numbers_action_python"
+    parameters:
+      num1: 1
+      num2: 2
 
