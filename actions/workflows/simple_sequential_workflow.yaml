@@ -1,28 +1,19 @@
 version: 1.0
 
+description: A basic sequential workflow.
+
 input:
-  - hello_string
-  - json_data
+  - name
 
 vars:
   - greeting: null
 
 output:
-  - greeting: <% ctx().greeting %>1
+  - greeting: <% ctx().greeting %>
 
 tasks:
-  hello_task:
-    action: core.echo
-    input:
-     message: |
-        The JSON payload is: 
-            policy ID: {{ ctx().json_data.policyId }}
-            group name: {{ ctx().json_data.groupName }}
-            alert ID: {{ ctx().json_data.alertId }}
-            JSON payload AS IS: {{ ctx().json_data }}
-
   task1:
-    action: core.echo message=<% ctx().hello_string %>
+    action: core.echo message=<% ctx().name %>
     next:
       - when: <% succeeded() %>
         publish: greeting=<% result().stdout %>
@@ -42,7 +33,3 @@ tasks:
     next:
       - when: <% succeeded() %>
         publish: greeting=<% result().stdout %>
-#      message: |
-#        Testing first ST2 workflow: "{{ ctx().hello_string }}"
-#        json payload message: "{{ ctx().json_data.message }}"
-
