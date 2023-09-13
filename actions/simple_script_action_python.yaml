@@ -4,10 +4,3 @@ description: Testing my simple script
 runner_type: "python-script"
 entry_point: "scripts/simple_script.py"
 enabled: true
-output_schema:
-  type: "object"
-  properties:
-    value:
-      required: true
-      type: integer
-  additionalProperties: false
