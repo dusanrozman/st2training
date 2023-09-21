@@ -4,7 +4,7 @@ description: "Rule to run hello world"
 enabled: true
 
 trigger:
-  description: "Triggers on specified intervals. e.g. every 30s, 1week etc."
+  description: "Triggers on specified intervals. e.g. every 30s, 1week etc. - test"
   type: core.st2.webhook
   parameters:
     url: "st2training"
