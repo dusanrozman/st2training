@@ -1,0 +1,15 @@
+---
+name: test
+description: Testing workflows
+runner_type: orquesta
+entry_point: workflows/test.yaml
+enabled: true
+parameters:
+  some_input:
+    type: integer
+    description: "Some input"
+    required: true
+output_schema:
+  result:
+    required: yes
+    type: string
