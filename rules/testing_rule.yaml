@@ -1,0 +1,22 @@
+---
+name: "test"                      # required
+pack: "amdocs_st2_training"                       # optional
+description: "Rule description."       # optional
+enabled: true
+
+trigger:
+        type: "core.st2.webhook"
+        parameters:
+            url: "rozman"
+
+criteria:
+    trigger.body.action:
+        type: "equals"
+        pattern: "test"
+
+action:
+    ref: "amdocs_st2_training.test"
+    parameters:
+      number: "{{ trigger.body.number }}"
+
+

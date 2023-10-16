@@ -1,0 +1,19 @@
+version: 1.0
+
+description: A basic sequential workflow.
+
+input:
+  - some_input
+
+tasks:
+  process:
+    action: core.noop
+    next:
+      - when: <% ctx().some_input = 2 %>
+        publish:
+          - result: "This is a custom failure message"
+        do: fail
+
+output:
+  - result: "{{ config_context.result if config_context.result else 'Success default!' }}"
+
