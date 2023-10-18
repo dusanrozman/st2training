@@ -8,12 +8,4 @@ input:
 tasks:
   process:
     action: core.noop
-    next:
-      - when: <% ctx().some_input = 2 %>
-        publish:
-          - error: "This is a custom failure message"
-        do: fail
-
-output:
-  - result: "{{ ctx().error if 'error' in ctx() else 'Successfully ran!' }}"
 
